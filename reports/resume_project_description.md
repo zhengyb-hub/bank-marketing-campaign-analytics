@@ -2,15 +2,15 @@
 
 ## Recommended Resume Bullet
 
-Built a marketing campaign analytics project on 41,188 direct marketing contacts, using SQL and Python to analyze conversion rates, segment performance, contact frequency, channel effectiveness, propensity scoring, and campaign ROI; identified high-propensity audiences and targeting rules to improve marketing efficiency.
+Built a marketing analytics project on 41,188 historical campaign records, using SQL and Python to analyze response by segment and contact pattern; evaluated a leakage-aware propensity model on a chronological holdout, surfaced its generalization limits, and designed an assumption-based outreach scenario.
 
 ## Short Version
 
-Bank Marketing Campaign Analytics: analyzed 41,188 campaign contacts with SQL, Python, and Plotly to diagnose conversion drivers, build a propensity model, and recommend ROI-focused audience targeting.
+Bank Marketing Campaign Analytics: analyzed 41,188 campaign records with SQL, Python, and Plotly; identified an out-of-time model performance gap and modeled outreach trade-offs under explicit assumptions.
 
 ## Interview Talking Points
 
-- Translated raw campaign records into marketing KPIs: conversion rate, cost per conversion, ROI, and segment response.
-- Excluded call duration from the targeting model because it is unavailable before outreach and would leak outcome information.
-- Compared broad outreach with propensity-decile targeting to show how targeting can improve campaign efficiency.
+- Translated raw campaign records into response KPIs and clearly separated observed conversion from hypothetical cost/value scenarios.
+- Excluded current-campaign touch count, call duration, and last-contact channel/time from the pre-outreach model.
+- Compared broad outreach with holdout-only propensity-decile selection, documented non-monotonic response and weak out-of-time AUC, and avoided a deployment claim.
 - Delivered dashboard, SQL bundle, one-page PDF, and resume-ready project description.

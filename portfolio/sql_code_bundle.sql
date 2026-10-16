@@ -5,15 +5,15 @@
 -- 01_campaign_kpis.sql
 -- ==============================================================================
 
--- Campaign-level KPIs.
+-- Historical response and hypothetical unit-economics inputs; not realized ROI.
 SELECT
     COUNT(*) AS contacts,
     SUM(converted) AS conversions,
     ROUND(AVG(converted), 4) AS conversion_rate,
     ROUND(AVG(campaign), 2) AS avg_touches,
-    ROUND(SUM(converted) * 650.0, 2) AS estimated_revenue,
-    ROUND(SUM(campaign) * 3.0, 2) AS estimated_cost,
-    ROUND((SUM(converted) * 650.0 - SUM(campaign) * 3.0) / (SUM(campaign) * 3.0), 2) AS roi
+    ROUND(SUM(converted) * 650.0, 2) AS modeled_conversion_value,
+    ROUND(SUM(campaign) * 3.0, 2) AS modeled_historical_touch_cost,
+    ROUND(SUM(converted) * 650.0 - SUM(campaign) * 3.0, 2) AS modeled_net_value
 FROM campaign_contacts;
 
 
@@ -21,14 +21,13 @@ FROM campaign_contacts;
 -- 02_segment_conversion.sql
 -- ==============================================================================
 
--- Conversion rate and ROI by customer segment.
+-- Historical conversion by record segment; no causal or ROI inference.
 SELECT
     job,
     COUNT(*) AS contacts,
     SUM(converted) AS conversions,
     ROUND(AVG(converted), 4) AS conversion_rate,
-    ROUND(AVG(campaign), 2) AS avg_touches,
-    ROUND((SUM(converted) * 650.0 - SUM(campaign) * 3.0) / (SUM(campaign) * 3.0), 2) AS roi
+    ROUND(AVG(campaign), 2) AS avg_touches
 FROM campaign_contacts
 GROUP BY job
 ORDER BY conversion_rate DESC, contacts DESC;
@@ -38,7 +37,7 @@ ORDER BY conversion_rate DESC, contacts DESC;
 -- 03_channel_performance.sql
 -- ==============================================================================
 
--- Contact method performance.
+-- Observed contact-method association; EUR 3 per touch is assumed.
 SELECT
     contact,
     COUNT(*) AS contacts,

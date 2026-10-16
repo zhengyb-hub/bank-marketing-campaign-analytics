@@ -1,0 +1,2 @@
+roc_auc,average_precision,brier_score,holdout_base_rate,train_rows,holdout_rows
+0.5337402931434481,0.366179088659055,0.19870979746328324,0.25813343692337576,30891,10297

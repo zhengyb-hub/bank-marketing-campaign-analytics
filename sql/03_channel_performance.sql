@@ -1,4 +1,4 @@
--- Contact method performance.
+-- Observed contact-method association; EUR 3 per touch is assumed.
 SELECT
     contact,
     COUNT(*) AS contacts,

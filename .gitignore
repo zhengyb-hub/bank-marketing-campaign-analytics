@@ -4,3 +4,4 @@ data/raw/*
 data/processed/bank_marketing_clean.csv
 data/processed/bank_marketing.sqlite
 *.pyc
+tmp/

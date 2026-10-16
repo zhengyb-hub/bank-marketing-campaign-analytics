@@ -1,2 +1,2 @@
-contacts,conversions,conversion_rate,avg_touches,contact_cost_assumption,conversion_value_assumption,estimated_revenue,estimated_cost,estimated_profit,roi
-41188,4640,0.11265417111780131,2.567592502670681,3.0,650.0,3016000.0,317262.0,2698738.0,8.506338609729498
+contacts,conversions,conversion_rate,avg_touches,contact_cost_assumption,conversion_value_assumption,modeled_conversion_value,modeled_historical_touch_cost,modeled_net_value
+41188,4640,0.11265417111780131,2.567592502670681,3.0,650.0,3016000.0,317262.0,2698738.0
